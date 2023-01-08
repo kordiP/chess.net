@@ -117,7 +117,7 @@
                 <Grid Grid.Row="2" Grid.Column="0" Background="{StaticResource OddTile}"></Grid>
                 <Grid Grid.Row="2" Grid.Column="1" Background="{StaticResource EvenTile}"></Grid>
                 <Grid Grid.Row="2" Grid.Column="2" Background="{StaticResource OddTile}"></Grid>
-                <Grid Grid.Row="2" Grid.Column="3" Background="{StaticResource EvenTile}"></Grid>
+                <Grid Grid.Row="2" Grid.Column="3" Background="{StaticResource EvenTile}"/>
                 <Grid Grid.Row="2" Grid.Column="4" Background="{StaticResource OddTile}"></Grid>
                 <Grid Grid.Row="2" Grid.Column="5" Background="{StaticResource EvenTile}"></Grid>
                 <Grid Grid.Row="2" Grid.Column="6" Background="{StaticResource OddTile}"></Grid>
@@ -137,7 +137,7 @@
                 <Grid Grid.Row="4" Grid.Column="0" Background="{StaticResource OddTile}"></Grid>
                 <Grid Grid.Row="4" Grid.Column="1" Background="{StaticResource EvenTile}"></Grid>
                 <Grid Grid.Row="4" Grid.Column="2" Background="{StaticResource OddTile}"></Grid>
-                <Grid Grid.Row="4" Grid.Column="3" Background="{StaticResource EvenTile}"></Grid>
+                <Grid Grid.Row="4" Grid.Column="3" Background="{StaticResource EvenTile}"/>
                 <Grid Grid.Row="4" Grid.Column="4" Background="{StaticResource OddTile}"></Grid>
                 <Grid Grid.Row="4" Grid.Column="5" Background="{StaticResource EvenTile}"></Grid>
                 <Grid Grid.Row="4" Grid.Column="6" Background="{StaticResource OddTile}"></Grid>
@@ -160,12 +160,12 @@
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="6" Grid.Column="1" Background="{StaticResource EvenTile}">
-                    <Canvas>
-                        <Path Style="{StaticResource Pawn_W}" />
+                    <Canvas AllowDrop="True" Background="Transparent" Name="b2_Canvas" Drop="b2_Canvas_Drop" DragLeave="b2_Canvas_DragLeave">
+                        <Path x:Name="white_pawn2" Style="{StaticResource Pawn_W}" MouseMove="white_pawn2_MouseMove" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="6" Grid.Column="2" Background="{StaticResource OddTile}">
-                    <Canvas>
+                    <Canvas AllowDrop="True">
                         <Path Style="{StaticResource Pawn_W}" />
                     </Canvas>
                 </Grid>
@@ -202,8 +202,8 @@
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="7" Grid.Column="1" Background="{StaticResource OddTile}">
-                    <Canvas>
-                            <Path Style="{StaticResource Knight_W}" />
+                    <Canvas AllowDrop="True" Background="Transparent" Name="b1_Canvas" Drop="b1_Canvas_Drop" DragLeave="b1_Canvas_DragLeave">
+                            <Path x:Name="white_Knight1" Style="{StaticResource Knight_W}" MouseMove="white_Knight1_MouseMove" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="7" Grid.Column="2" Background="{StaticResource EvenTile}">
