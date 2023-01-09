@@ -31,209 +31,273 @@
                 </Grid.ColumnDefinitions>
                 <!-- Row 0 -->
                 <Grid Grid.Row="0" Grid.Column="0" Background="{StaticResource OddTile}">
-                    <Canvas>
+                    <Canvas Name="a8_Canvas">
                             <Path Style="{StaticResource Rook_B}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="1" Background="{StaticResource EvenTile}">
-                    <Canvas>
+                    <Canvas Name="b8_Canvas">
                         <Path Style="{StaticResource Knight_B}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="2" Background="{StaticResource OddTile}">
-                    <Canvas>
+                    <Canvas Name="c8_Canvas">
                         <Path Style="{StaticResource Bishop_B}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="3" Background="{StaticResource EvenTile}">
-                    <Canvas>
+                    <Canvas Name="d8_Canvas">
                         <Path Style="{StaticResource Queen_B}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="4" Background="{StaticResource OddTile}">
-                    <Canvas>
+                    <Canvas Name="e8_Canvas">
                         <Path Style="{StaticResource King_B}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="5" Background="{StaticResource EvenTile}">
-                    <Canvas>
+                    <Canvas Name="f8_Canvas">
                         <Path Style="{StaticResource Bishop_B}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="6" Background="{StaticResource OddTile}">
-                    <Canvas>
+                    <Canvas Name="g8_Canvas">
                         <Path Style="{StaticResource Knight_B}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="7" Background="{StaticResource EvenTile}">
-                    <Canvas>
+                    <Canvas Name="h8_Canvas">
                             <Path Style="{StaticResource Rook_B}" />
                     </Canvas>
                 </Grid>
 
                 <!-- Row 1 -->
                 <Grid Grid.Row="1" Grid.Column="0" Background="{StaticResource EvenTile}">
-                    <Canvas>
+                    <Canvas Name="a7_Canvas">
                         <Path Style="{StaticResource Pawn_B}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="1" Background="{StaticResource OddTile}">
-                    <Canvas>
+                    <Canvas Name="b7_Canvas">
                         <Path Style="{StaticResource Pawn_B}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="2" Background="{StaticResource EvenTile}">
-                    <Canvas>
+                    <Canvas Name="c7_Canvas">
                         <Path Style="{StaticResource Pawn_B}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="3" Background="{StaticResource OddTile}">
-                    <Canvas>
+                    <Canvas Name="d7_Canvas">
                         <Path Style="{StaticResource Pawn_B}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="4" Background="{StaticResource EvenTile}">
-                    <Canvas>
+                    <Canvas Name="e7_Canvas">
                         <Path Style="{StaticResource Pawn_B}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="5" Background="{StaticResource OddTile}">
-                    <Canvas>
+                    <Canvas Name="f7_Canvas">
                         <Path Style="{StaticResource Pawn_B}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="6" Background="{StaticResource EvenTile}">
-                    <Canvas>
+                    <Canvas Name="g7_Canvas">
                         <Path Style="{StaticResource Pawn_B}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="7" Background="{StaticResource OddTile}">
-                    <Canvas>
+                    <Canvas Name="h7_Canvas">
                         <Path Style="{StaticResource Pawn_B}" />
                     </Canvas>
                 </Grid>
 
                 <!-- Row 2 -->
-                <Grid Grid.Row="2" Grid.Column="0" Background="{StaticResource OddTile}"></Grid>
-                <Grid Grid.Row="2" Grid.Column="1" Background="{StaticResource EvenTile}"></Grid>
-                <Grid Grid.Row="2" Grid.Column="2" Background="{StaticResource OddTile}"></Grid>
-                <Grid Grid.Row="2" Grid.Column="3" Background="{StaticResource EvenTile}"/>
-                <Grid Grid.Row="2" Grid.Column="4" Background="{StaticResource OddTile}"></Grid>
-                <Grid Grid.Row="2" Grid.Column="5" Background="{StaticResource EvenTile}"></Grid>
-                <Grid Grid.Row="2" Grid.Column="6" Background="{StaticResource OddTile}"></Grid>
-                <Grid Grid.Row="2" Grid.Column="7" Background="{StaticResource EvenTile}"></Grid>
+                <Grid Grid.Row="2" Grid.Column="0" Background="{StaticResource OddTile}">
+                    <Canvas Name="a6_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="1" Background="{StaticResource EvenTile}">
+                    <Canvas Name="b6_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="2" Background="{StaticResource OddTile}">
+                    <Canvas Name="c6_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="3" Background="{StaticResource EvenTile}">
+                    <Canvas Name="d6_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="4" Background="{StaticResource OddTile}">
+                    <Canvas Name="e6_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="5" Background="{StaticResource EvenTile}">
+                    <Canvas Name="f6_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="6" Background="{StaticResource OddTile}">
+                    <Canvas Name="g6_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="7" Background="{StaticResource EvenTile}">
+                    <Canvas Name="h6_Canvas"/>
+                </Grid>
 
                 <!-- Row 3 -->
-                <Grid Grid.Row="3" Grid.Column="0" Background="{StaticResource EvenTile}"></Grid>
-                <Grid Grid.Row="3" Grid.Column="1" Background="{StaticResource OddTile}"></Grid>
-                <Grid Grid.Row="3" Grid.Column="2" Background="{StaticResource EvenTile}"></Grid>
-                <Grid Grid.Row="3" Grid.Column="3" Background="{StaticResource OddTile}"></Grid>
-                <Grid Grid.Row="3" Grid.Column="4" Background="{StaticResource EvenTile}"></Grid>
-                <Grid Grid.Row="3" Grid.Column="5" Background="{StaticResource OddTile}"></Grid>
-                <Grid Grid.Row="3" Grid.Column="6" Background="{StaticResource EvenTile}"></Grid>
-                <Grid Grid.Row="3" Grid.Column="7" Background="{StaticResource OddTile}"></Grid>
+                <Grid Grid.Row="3" Grid.Column="0" Background="{StaticResource EvenTile}">
+                    <Canvas Name="a5_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="1" Background="{StaticResource OddTile}">
+                    <Canvas Name="b5_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="2" Background="{StaticResource EvenTile}">
+                    <Canvas Name="c5_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="3" Background="{StaticResource OddTile}">
+                    <Canvas Name="d5_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="4" Background="{StaticResource EvenTile}">
+                    <Canvas Name="e5_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="5" Background="{StaticResource OddTile}">
+                    <Canvas Name="f5_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="6" Background="{StaticResource EvenTile}">
+                    <Canvas Name="g5_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="7" Background="{StaticResource OddTile}">
+                    <Canvas Name="h5_Canvas"/>
+                </Grid>
 
                 <!-- Row 4 -->
-                <Grid Grid.Row="4" Grid.Column="0" Background="{StaticResource OddTile}"></Grid>
-                <Grid Grid.Row="4" Grid.Column="1" Background="{StaticResource EvenTile}"></Grid>
-                <Grid Grid.Row="4" Grid.Column="2" Background="{StaticResource OddTile}"></Grid>
-                <Grid Grid.Row="4" Grid.Column="3" Background="{StaticResource EvenTile}"/>
-                <Grid Grid.Row="4" Grid.Column="4" Background="{StaticResource OddTile}"></Grid>
-                <Grid Grid.Row="4" Grid.Column="5" Background="{StaticResource EvenTile}"></Grid>
-                <Grid Grid.Row="4" Grid.Column="6" Background="{StaticResource OddTile}"></Grid>
-                <Grid Grid.Row="4" Grid.Column="7" Background="{StaticResource EvenTile}"></Grid>
+                <Grid Grid.Row="4" Grid.Column="0" Background="{StaticResource OddTile}">
+                    <Canvas Name="a4_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="4" Grid.Column="1" Background="{StaticResource EvenTile}">
+                    <Canvas Name="b4_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="4" Grid.Column="2" Background="{StaticResource OddTile}">
+                    <Canvas Name="c4_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="4" Grid.Column="3" Background="{StaticResource EvenTile}">
+                    <Canvas Name="d4_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="4" Grid.Column="4" Background="{StaticResource OddTile}">
+                    <Canvas Name="e4_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="4" Grid.Column="5" Background="{StaticResource EvenTile}">
+                    <Canvas Name="f4_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="4" Grid.Column="6" Background="{StaticResource OddTile}">
+                    <Canvas Name="g4_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="4" Grid.Column="7" Background="{StaticResource EvenTile}">
+                    <Canvas Name="h4_Canvas"/>
+                </Grid>
 
                 <!-- Row 5 -->
-                <Grid Grid.Row="5" Grid.Column="0" Background="{StaticResource EvenTile}"></Grid>
-                <Grid Grid.Row="5" Grid.Column="1" Background="{StaticResource OddTile}"></Grid>
-                <Grid Grid.Row="5" Grid.Column="2" Background="{StaticResource EvenTile}"></Grid>
-                <Grid Grid.Row="5" Grid.Column="3" Background="{StaticResource OddTile}"></Grid>
-                <Grid Grid.Row="5" Grid.Column="4" Background="{StaticResource EvenTile}"></Grid>
-                <Grid Grid.Row="5" Grid.Column="5" Background="{StaticResource OddTile}"></Grid>
-                <Grid Grid.Row="5" Grid.Column="6" Background="{StaticResource EvenTile}"></Grid>
-                <Grid Grid.Row="5" Grid.Column="7" Background="{StaticResource OddTile}"></Grid>
+                <Grid Grid.Row="5" Grid.Column="0" Background="{StaticResource EvenTile}">
+                    <Canvas Name="a3_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="5" Grid.Column="1" Background="{StaticResource OddTile}">
+                    <Canvas Name="b3_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="5" Grid.Column="2" Background="{StaticResource EvenTile}">
+                    <Canvas Name="c3_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="5" Grid.Column="3" Background="{StaticResource OddTile}">
+                    <Canvas Name="d3_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="5" Grid.Column="4" Background="{StaticResource EvenTile}">
+                    <Canvas Name="e3_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="5" Grid.Column="5" Background="{StaticResource OddTile}">
+                    <Canvas Name="f3_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="5" Grid.Column="6" Background="{StaticResource EvenTile}">
+                    <Canvas Name="g3_Canvas"/>
+                </Grid>
+                <Grid Grid.Row="5" Grid.Column="7" Background="{StaticResource OddTile}">
+                    <Canvas Name="h3_Canvas"/>
+                </Grid>
 
                 <!-- Row 6 -->
                 <Grid Grid.Row="6" Grid.Column="0" Background="{StaticResource OddTile}">
-                    <Canvas>
+                    <Canvas Name="a2_Canvas">
                         <Path Style="{StaticResource Pawn_W}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="6" Grid.Column="1" Background="{StaticResource EvenTile}">
-                    <Canvas AllowDrop="True" Background="Transparent" Name="b2_Canvas">
+                    <Canvas Name="b2_Canvas">
                         <Path x:Name="white_pawn2" Style="{StaticResource Pawn_W}" MouseMove="white_pawn2_MouseMove" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="6" Grid.Column="2" Background="{StaticResource OddTile}">
-                    <Canvas AllowDrop="True">
+                    <Canvas  Name="c2_Canvas">
                         <Path Style="{StaticResource Pawn_W}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="6" Grid.Column="3" Background="{StaticResource EvenTile}">
-                    <Canvas>
+                    <Canvas  Name="d2_Canvas">
                         <Path Style="{StaticResource Pawn_W}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="6" Grid.Column="4" Background="{StaticResource OddTile}">
-                    <Canvas>
+                    <Canvas Name="e2_Canvas">
                         <Path Style="{StaticResource Pawn_W}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="6" Grid.Column="5" Background="{StaticResource EvenTile}">
-                    <Canvas>
+                    <Canvas Name="f2_Canvas">
                         <Path Style="{StaticResource Pawn_W}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="6" Grid.Column="6" Background="{StaticResource OddTile}">
-                    <Canvas>
+                    <Canvas Name="g2_Canvas">
                         <Path Style="{StaticResource Pawn_W}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="6" Grid.Column="7" Background="{StaticResource EvenTile}">
-                    <Canvas>
+                    <Canvas Name="h2_Canvas">
                         <Path Style="{StaticResource Pawn_W}" />
                     </Canvas>
                 </Grid>
 
                 <!-- Row 7 -->
                 <Grid Grid.Row="7" Grid.Column="0" Background="{StaticResource EvenTile}">
-                    <Canvas>
-                            <Path Style="{StaticResource Rook_W}" />
+                    <Canvas Name="a1_Canvas">
+                        <Path  x:Name="white_Rook1" Style="{StaticResource Rook_W}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="7" Grid.Column="1" Background="{StaticResource OddTile}">
-                    <Canvas AllowDrop="True" Background="Transparent" Name="b1_Canvas">
+                    <Canvas Name="b1_Canvas">
                             <Path x:Name="white_Knight1" Style="{StaticResource Knight_W}" MouseMove="white_Knight1_MouseMove" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="7" Grid.Column="2" Background="{StaticResource EvenTile}">
-                    <Canvas>
-                        <Path Style="{StaticResource Bishop_W}" />
+                    <Canvas Name="c1_Canvas">
+                        <Path x:Name="white_Bishop1" Style="{StaticResource Bishop_W}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="7" Grid.Column="3" Background="{StaticResource OddTile}">
-                    <Canvas>
-                        <Path Style="{StaticResource Queen_W}" />
+                    <Canvas Name="d1_Canvas">
+                        <Path x:Name="white_Queen" Style="{StaticResource Queen_W}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="7" Grid.Column="4" Background="{StaticResource EvenTile}">
-                    <Canvas>
-                        <Path Style="{StaticResource King_W}" />
+                    <Canvas Name="e1_Canvas">
+                        <Path x:Name="white_King" Style="{StaticResource King_W}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="7" Grid.Column="5" Background="{StaticResource OddTile}">
-                    <Canvas>
-                        <Path Style="{StaticResource Bishop_W}" />
+                    <Canvas Name="f1_Canvas">
+                        <Path x:Name="white_Bishop2" Style="{StaticResource Bishop_W}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="7" Grid.Column="6" Background="{StaticResource EvenTile}">
-                    <Canvas>
-                            <Path Style="{StaticResource Knight_W}" />
+                    <Canvas Name="g1_Canvas">
+                        <Path x:Name="white_Knight2" Style="{StaticResource Knight_W}" />
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="7" Grid.Column="7" Background="{StaticResource OddTile}">
-                    <Canvas>
-                            <Path Style="{StaticResource Rook_W}" />
+                    <Canvas Name="h1_Canvas">
+                        <Path x:Name="white_Rook2" Style="{StaticResource Rook_W}" />
                     </Canvas>
                 </Grid>
             </Grid>
