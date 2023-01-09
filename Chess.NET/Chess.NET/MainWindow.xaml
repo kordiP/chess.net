@@ -160,7 +160,7 @@
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="6" Grid.Column="1" Background="{StaticResource EvenTile}">
-                    <Canvas AllowDrop="True" Background="Transparent" Name="b2_Canvas" Drop="b2_Canvas_Drop" DragLeave="b2_Canvas_DragLeave">
+                    <Canvas AllowDrop="True" Background="Transparent" Name="b2_Canvas">
                         <Path x:Name="white_pawn2" Style="{StaticResource Pawn_W}" MouseMove="white_pawn2_MouseMove" />
                     </Canvas>
                 </Grid>
@@ -202,7 +202,7 @@
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="7" Grid.Column="1" Background="{StaticResource OddTile}">
-                    <Canvas AllowDrop="True" Background="Transparent" Name="b1_Canvas" Drop="b1_Canvas_Drop" DragLeave="b1_Canvas_DragLeave">
+                    <Canvas AllowDrop="True" Background="Transparent" Name="b1_Canvas">
                             <Path x:Name="white_Knight1" Style="{StaticResource Knight_W}" MouseMove="white_Knight1_MouseMove" />
                     </Canvas>
                 </Grid>
