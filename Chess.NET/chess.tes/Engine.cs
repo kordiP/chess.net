@@ -8,16 +8,16 @@
             GenerateChessBoard(board);
             PrintChessBoard(board);
             Console.WriteLine("Which piece do you want to move? /type a1, b1, d3 etc/ :");
-            string Pos = Console.ReadLine();
-            int PosX = char.Parse(Pos.Substring(0,1)) - 97;
-            int PosY = int.Parse(Pos.Substring(1,1)) - 1;
-            Console.WriteLine(PosX + "-" + PosY);
-            ChessPieces selectedPiece = FindPiece(board, PosX, PosY);
+            string pieceCurrPos = Console.ReadLine();
+            int pieceCurrPosX = char.Parse(pieceCurrPos.Substring(0,1)) - 97;
+            int pieceCurrPosY = int.Parse(pieceCurrPos.Substring(1,1)) - 1;
+            Console.WriteLine(pieceCurrPosX + "-" + pieceCurrPosY);
+            ChessPieces selectedPiece = FindPiece(board, pieceCurrPosX, pieceCurrPosY);
             Console.WriteLine("Where do you want it to move? /type a1, b1, d3 etc/ :");
-            Pos = Console.ReadLine();
-            PosX = char.Parse(Pos.Substring(0, 1)) - 97; // -97 because character 'a' sits at position 97
-            PosY = int.Parse(Pos.Substring(1, 1)) - 1; // -1 because a1 = 0-0
-            MovePiece(board, selectedPiece, PosX, PosY);
+            string pieceNextPos = Console.ReadLine();
+            int pieceNextPosX = char.Parse(pieceNextPos.Substring(0, 1)) - 97; // -97 because character 'a' sits at position 97
+            int pieceNextPosY = int.Parse(pieceNextPos.Substring(1, 1)) - 1; // -1 because a1 = 0-0
+            MovePiece(board, selectedPiece, pieceNextPosX, pieceNextPosY);
             PrintChessBoard(board);
         }
         enum ChessPieces
@@ -28,14 +28,14 @@
         {
             for (int i = 7; i >= 0; i--)
             {
-                
+                Console.WriteLine("\n+------+------+------+------+------+------+------+------+");
                 for (int j = 0; j < 8; j++)
                 {
-                    Console.Write(chessBoard[j, i] + " | ");
+                    Console.Write("| " + chessBoard[j, i] + " ");
                 }
-                Console.WriteLine("\n-----+------+------+------+------+------+------+------+");
+                Console.Write("| " + (i + 1));
             }
-
+            Console.WriteLine("\n+------+------+------+------+------+------+------+------+\n  a      b      c      d      e      f      g      h");
         }
         static void GenerateChessBoard(ChessPieces[,] chessBoard)
         {
@@ -72,9 +72,9 @@
             }
 
         }
-        static void MovePiece(ChessPieces[,] chessBoard, ChessPieces piece, int nextXAxisPos, int nextYAxisPos)
+        static void MovePiece(ChessPieces[,] chessBoard, ChessPieces piece, int pieceNextPosX, int pieceNextPosY)
         {
-            chessBoard[nextXAxisPos, nextYAxisPos] = piece;
+            chessBoard[pieceNextPosX, pieceNextPosY] = piece;
         }
         static ChessPieces FindPiece(ChessPieces[,] chessBoard, int X, int Y)
         {
@@ -82,7 +82,6 @@
         }
         static bool IsLegalMove(ChessPieces[,] chessBoard, int X, int Y)
         {
-
             return true;
         }
     }
