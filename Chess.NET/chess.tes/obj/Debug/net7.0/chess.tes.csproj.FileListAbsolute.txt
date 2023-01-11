@@ -1,0 +1,15 @@
+D:\Programs\Chess.NET\Chess.NET\chess.tes\bin\Debug\net7.0\chess.tes.exe
+D:\Programs\Chess.NET\Chess.NET\chess.tes\bin\Debug\net7.0\chess.tes.deps.json
+D:\Programs\Chess.NET\Chess.NET\chess.tes\bin\Debug\net7.0\chess.tes.runtimeconfig.json
+D:\Programs\Chess.NET\Chess.NET\chess.tes\bin\Debug\net7.0\chess.tes.dll
+D:\Programs\Chess.NET\Chess.NET\chess.tes\bin\Debug\net7.0\chess.tes.pdb
+D:\Programs\Chess.NET\Chess.NET\chess.tes\obj\Debug\net7.0\chess.tes.csproj.AssemblyReference.cache
+D:\Programs\Chess.NET\Chess.NET\chess.tes\obj\Debug\net7.0\chess.tes.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programs\Chess.NET\Chess.NET\chess.tes\obj\Debug\net7.0\chess.tes.AssemblyInfoInputs.cache
+D:\Programs\Chess.NET\Chess.NET\chess.tes\obj\Debug\net7.0\chess.tes.AssemblyInfo.cs
+D:\Programs\Chess.NET\Chess.NET\chess.tes\obj\Debug\net7.0\chess.tes.csproj.CoreCompileInputs.cache
+D:\Programs\Chess.NET\Chess.NET\chess.tes\obj\Debug\net7.0\chess.tes.dll
+D:\Programs\Chess.NET\Chess.NET\chess.tes\obj\Debug\net7.0\refint\chess.tes.dll
+D:\Programs\Chess.NET\Chess.NET\chess.tes\obj\Debug\net7.0\chess.tes.pdb
+D:\Programs\Chess.NET\Chess.NET\chess.tes\obj\Debug\net7.0\chess.tes.genruntimeconfig.cache
+D:\Programs\Chess.NET\Chess.NET\chess.tes\obj\Debug\net7.0\ref\chess.tes.dll
