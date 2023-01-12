@@ -1,4 +1,6 @@
-﻿namespace chess.tes
+﻿using System.Net.Http.Headers;
+
+namespace chess.tes
 {
     internal class Engine
     {
@@ -74,15 +76,36 @@
         }
         static void MovePiece(ChessPieces[,] chessBoard, ChessPieces piece, int pieceNextPosX, int pieceNextPosY)
         {
-            chessBoard[pieceNextPosX, pieceNextPosY] = piece;
+            if (IsLegalMove(chessBoard, piece, pieceNextPosX, pieceNextPosY))
+            {
+                chessBoard[pieceNextPosX, pieceNextPosY] = piece;
+            }
         }
         static ChessPieces FindPiece(ChessPieces[,] chessBoard, int X, int Y)
         {
             return chessBoard[X, Y];
         }
-        static bool IsLegalMove(ChessPieces[,] chessBoard, int X, int Y)
+        static bool IsLegalMove(ChessPieces[,] chessBoard, ChessPieces piece, int nextX, int nextY)
         {
-            return true;
+            switch (piece)
+            {
+                case ChessPieces.None:
+                    return false;
+                case ChessPieces.Rook: // only in the same row OR the same column as the current position
+                    break;
+                case ChessPieces.Knig: // L position moves - hardest prolly
+                    break;
+                case ChessPieces.Bish: // diagonals
+                    break;
+                case ChessPieces.Quen: // diags + rows/columns
+                    break;
+                case ChessPieces.King: // 1 position in each dirrection
+                    break;
+                case ChessPieces.Pawn: // 1 postion on column, 2 is possible if at start
+                    break;
+                default:
+                    return false;           }
+            return false;
         }
     }
 }
