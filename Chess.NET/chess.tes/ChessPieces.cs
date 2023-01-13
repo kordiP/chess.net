@@ -9,11 +9,11 @@ namespace chess.tes
             None, Rook, Knig, Bish, Quen, King, Pawn
         };
         public ChessPiece[,] board;
-        public List<string> moves;
+        public Dictionary<string, ChessPiece> moves;
         public ChessPieces()
         {
             this.board = new ChessPiece[8, 8];
-            moves = new List<string>();
+            moves = new Dictionary<string, ChessPiece>();
         }
         public void GenerateChessBoard() // works :>
         {
@@ -24,7 +24,7 @@ namespace chess.tes
             board[0, 0] = ChessPiece.Rook; board[1, 0] = ChessPiece.Knig; board[2, 0] = ChessPiece.Bish;
 
             board[3, 0] = ChessPiece.Quen; board[4, 0] = ChessPiece.King;
-      
+
             board[5, 0] = ChessPiece.Bish; board[6, 0] = ChessPiece.Knig; board[7, 0] = ChessPiece.Rook;
             for (int i = 0; i < 8; i++)
             {
@@ -56,20 +56,83 @@ namespace chess.tes
                 stringBuilder.Append("| " + (i + 1));
             }
             stringBuilder.AppendLine("\n+------+------+------+------+------+------+------+------+\n  a      b      c      d      e      f      g      h");
-            return stringBuilder.ToString();        
+            return stringBuilder.ToString();
         }
         public bool IsLegalMove(int currX, int currY, int nextX, int nextY)
         {
-            ChessPiece piece = board[currX, currY];
-            switch (piece)
+            ChessPiece currPiece = board[currX, currY];
+            switch (currPiece)
             {
                 case ChessPiece.None:
                     return false;
-                case ChessPiece.Rook: // only in the same row OR the same column as the current position
-                    break;
+                case ChessPiece.Rook:
+                    if (nextX != currX && nextY != currY)
+                        return false; // check if its on the same row/column
+                    if (nextX > currX)
+                    {
+                        for (int i = currX; i < nextX; i++)
+                            if (!board[currY, i].Equals(ChessPiece.None))
+                                return false; // check if there is piece between currPos and nextPos
+                    }
+                    else
+                    {
+                        for (int i = currX; i > nextX; i--)
+                            if (!board[currY, i].Equals(ChessPiece.None))
+                                return false; // check if there is piece between currPos and nextPos
+                    }
+                    if (nextY > currY)
+                    {
+                        for (int i = currY; i <= nextY; i++)
+                            if (!board[i, currX].Equals(ChessPiece.None))
+                                return false; // check if there is piece between currPos and nextPos
+                    }
+                    else
+                    {
+                        for (int i = currY; i >= nextY; i--)
+                            if (!board[i, currX].Equals(ChessPiece.None))
+                                return false; // check if there is piece between currPos and nextPos
+                    }
+                    return true;
                 case ChessPiece.Knig: // L position moves - hardest prolly
+
                     break;
-                case ChessPiece.Bish: // diagonals
+                case ChessPiece.Bish:
+                    if (!board[nextX, nextY].Equals(ChessPiece.None))
+                        return false;
+                    else if (Math.Abs(nextX - currX) != Math.Abs(nextY - currY))
+                        return false; // check if its on the diagonal
+                    if (nextX > currX)
+                    {
+                        for (int i = currX + 1; i < nextX; i++) // x +
+                        {
+                            for (int j = currY + 1; j < nextY; j++) // y + 
+                            {
+                                if (Math.Abs(nextX - i) == Math.Abs(nextY - j))
+                                    if (!board[i, j].Equals(ChessPiece.None)) return false;
+                            }
+                            for (int j = currY - 1; j > nextY; j--) // y - 
+                            {
+                                if (Math.Abs(nextX - i) == Math.Abs(nextY - j))
+                                    if (!board[i, j].Equals(ChessPiece.None)) return false;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (int i = currX - 1; i > nextX; i--) // x -
+                        {
+                            for (int j = currY + 1; j < nextY; j++) // y +
+                            {
+                                if (Math.Abs(nextX - i) == Math.Abs(nextY - j))
+                                    if (!board[i, j].Equals(ChessPiece.None)) return false;
+                            }
+                            for (int j = currY - 1; j > nextY; j--) // y -
+                            {
+                                if (Math.Abs(nextX - i) == Math.Abs(nextY - j))
+                                    if (!board[i, j].Equals(ChessPiece.None)) return false;
+                            }
+                        }
+                    }
                     break;
                 case ChessPiece.Quen: // diags + rows/columns
                     break;
@@ -82,6 +145,13 @@ namespace chess.tes
             }
             return true;
         }
+        public bool IsCheckOrOccupiedNext(int nextX, int nextY)
+        {
+            // check if next position is occupied
+            if (!board[nextX, nextY].Equals(ChessPiece.None))
+                return false;
+            return true;
+        }
         public void MovePiece(int currX, int currY, int nextX, int nextY)
         {
             ChessPiece piece = board[currX, currY];
@@ -89,8 +159,9 @@ namespace chess.tes
             {
                 board[nextX, nextY] = piece;
                 board[currX, currY] = ChessPiece.None;
-                moves.Add($"{moves.Count + 1}.{(char)(currX + 97)}{currY + 1} -> {(char)(nextX + 97)}{nextY + 1}\t");
+                moves.Add($"{moves.Count + 1}.{(char)(currX + 97)}{currY + 1} -> {(char)(nextX + 97)}{nextY + 1}", piece);
             }
         }
+
     }
 }

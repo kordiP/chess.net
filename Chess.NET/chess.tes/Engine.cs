@@ -23,7 +23,7 @@ namespace chess.tes
                 int nextX = char.Parse(input.Substring(0, 1)) - 97;
                 int nextY = int.Parse(input.Substring(1, 1)) - 1;
                 chess.MovePiece(currX, currY, nextX, nextY);
-                Console.Clear();
+                //Console.Clear();
                 Console.WriteLine(chess.PrintChessBoard());
                 Console.WriteLine("Press enter for next move or type /END/ to close.");
                 input = Console.ReadLine();
@@ -32,7 +32,7 @@ namespace chess.tes
             Console.WriteLine("All moves:");
             foreach (var item in chess.moves)
             {
-                Console.Write(item);
+                Console.Write(item.Key + " " + item.Value + "|\t");
             }
         }
         //int pieceCurrPosX = char.Parse(pieceCurrPos.Substring(0, 1)) - 97;
