@@ -93,9 +93,16 @@ namespace chess.tes
                                 return false; // check if there is piece between currPos and nextPos
                     }
                     return true;
-                case ChessPiece.Knig: // L position moves - hardest prolly
-
-                    break;
+                case ChessPiece.Knig:
+                    if (!board[nextX, nextY].Equals(ChessPiece.None))
+                        return false;
+                    else if (Math.Abs(nextX - currX) > 2 || Math.Abs(nextX - currX) < 1)
+                        return false;
+                    else if (Math.Abs(nextY - currY) > 2 || Math.Abs(nextY - currY) < 1)
+                        return false;
+                    else if(Math.Abs(nextX - currX) + Math.Abs(nextY - currY) !=3)
+                        return false;
+                    return true;
                 case ChessPiece.Bish:
                     if (!board[nextX, nextY].Equals(ChessPiece.None))
                         return false;
@@ -135,6 +142,9 @@ namespace chess.tes
                     }
                     break;
                 case ChessPiece.Quen: // diags + rows/columns
+                    if (!board[nextX, nextY].Equals(ChessPiece.None))
+                        return false;
+
                     break;
                 case ChessPiece.King: // 1 position in each dirrection
                     break;
@@ -145,11 +155,9 @@ namespace chess.tes
             }
             return true;
         }
-        public bool IsCheckOrOccupiedNext(int nextX, int nextY)
+        private bool IsCheck(int nextX, int nextY)
         {
             // check if next position is occupied
-            if (!board[nextX, nextY].Equals(ChessPiece.None))
-                return false;
             return true;
         }
         public void MovePiece(int currX, int currY, int nextX, int nextY)
