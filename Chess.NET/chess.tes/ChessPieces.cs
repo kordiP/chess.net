@@ -155,7 +155,7 @@ namespace chess.tes
             }
             return true;
         }
-        private bool IsCheck(int nextX, int nextY)
+        private bool IsCheck(int currX, int currY, int nextX, int nextY)
         {
             // check if next position is occupied
             return true;
