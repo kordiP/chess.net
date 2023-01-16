@@ -140,26 +140,80 @@ namespace chess.tes
                             }
                         }
                     }
-                    break;
+                    return true;
                 case ChessPiece.Quen: // diags + rows/columns
                     if (!board[nextX, nextY].Equals(ChessPiece.None))
                         return false;
                     else if (Math.Abs(nextX - currX) != Math.Abs(nextY - currY) && nextX != currX && nextY != currY)
                         return false;
-
+                    if (nextX > currX && nextY == currY)
+                    {
+                        for (int i = currX + 1; i < nextX; i++)
+                            if (!board[i, currY].Equals(ChessPiece.None))
+                                return false;
+                    }
+                    else if (nextX < currX && nextY == currY)
+                    {
+                        for (int i = currX - 1; i > nextX; i--)
+                            if (!board[i, currY].Equals(ChessPiece.None))
+                                return false;
+                    }
+                    else if (nextY > currY && nextX == currX)
+                    {
+                        for (int i = currY + 1; i <= nextY; i++)
+                            if (!board[currX, i].Equals(ChessPiece.None))
+                                return false;
+                    }
+                    else if (nextY < currY && nextX == currX)
+                    {
+                        for (int i = currY - 1; i >= nextY; i--)
+                            if (!board[currX, i].Equals(ChessPiece.None))
+                                return false;
+                    }
+                    else if (nextX > currX && nextY != currY)
+                    {
+                        for (int i = currX + 1; i < nextX; i++) // x +
+                        {
+                            for (int j = currY + 1; j < nextY; j++) // y + 
+                            {
+                                if (Math.Abs(nextX - i) == Math.Abs(nextY - j))
+                                    if (!board[i, j].Equals(ChessPiece.None)) return false;
+                            }
+                            for (int j = currY - 1; j > nextY; j--) // y - 
+                            {
+                                if (Math.Abs(nextX - i) == Math.Abs(nextY - j))
+                                    if (!board[i, j].Equals(ChessPiece.None)) return false;
+                            }
+                        }
+                    }
+                    else if (nextX < currX && nextY != currY)
+                    {
+                        for (int i = currX - 1; i > nextX; i--) // x -
+                        {
+                            for (int j = currY + 1; j < nextY; j++) // y +
+                            {
+                                if (Math.Abs(nextX - i) == Math.Abs(nextY - j))
+                                    if (!board[i, j].Equals(ChessPiece.None)) return false;
+                            }
+                            for (int j = currY - 1; j > nextY; j--) // y -
+                            {
+                                if (Math.Abs(nextX - i) == Math.Abs(nextY - j))
+                                    if (!board[i, j].Equals(ChessPiece.None)) return false;
+                            }
+                        }
+                    }
                     return true;
                 case ChessPiece.King: // 1 position in each dirrection
-                    break;
+                    if (!board[nextX, nextY].Equals(ChessPiece.None))
+                        return false;
+                    else if (Math.Abs(nextX - currX) >1 || Math.Abs(nextY - currY) > 1)
+                        return false;
+                    return true;
                 case ChessPiece.Pawn: // 1 postion on column, 2 is possible if at start
                     break;
                 default:
                     return true;
             }
-            return true;
-        }
-        private bool IsCheck(int currX, int currY, int nextX, int nextY)
-        {
-            // check if next position is occupied
             return true;
         }
         public void MovePiece(int currX, int currY, int nextX, int nextY)
