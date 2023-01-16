@@ -70,27 +70,27 @@ namespace chess.tes
                         return false; // check if its on the same row/column
                     if (nextX > currX)
                     {
-                        for (int i = currX; i < nextX; i++)
-                            if (!board[currY, i].Equals(ChessPiece.None))
-                                return false; // check if there is piece between currPos and nextPos
+                        for (int i = currX + 1; i < nextX; i++)
+                            if (!board[i, currY].Equals(ChessPiece.None))
+                                return false; 
                     }
-                    else
+                    else if (nextX < currX)
                     {
-                        for (int i = currX; i > nextX; i--)
-                            if (!board[currY, i].Equals(ChessPiece.None))
-                                return false; // check if there is piece between currPos and nextPos
+                        for (int i = currX - 1; i > nextX; i--)
+                            if (!board[i, currY].Equals(ChessPiece.None))
+                                return false; 
                     }
-                    if (nextY > currY)
+                    else if (nextY > currY)
                     {
-                        for (int i = currY; i <= nextY; i++)
-                            if (!board[i, currX].Equals(ChessPiece.None))
-                                return false; // check if there is piece between currPos and nextPos
+                        for (int i = currY + 1; i <= nextY; i++)
+                            if (!board[currX, i].Equals(ChessPiece.None))
+                                return false;
                     }
-                    else
+                    else if (nextY < currY)
                     {
-                        for (int i = currY; i >= nextY; i--)
-                            if (!board[i, currX].Equals(ChessPiece.None))
-                                return false; // check if there is piece between currPos and nextPos
+                        for (int i = currY - 1; i >= nextY; i--)
+                            if (!board[currX, i].Equals(ChessPiece.None))
+                                return false;
                     }
                     return true;
                 case ChessPiece.Knig:
@@ -144,8 +144,10 @@ namespace chess.tes
                 case ChessPiece.Quen: // diags + rows/columns
                     if (!board[nextX, nextY].Equals(ChessPiece.None))
                         return false;
+                    else if (Math.Abs(nextX - currX) != Math.Abs(nextY - currY) && nextX != currX && nextY != currY)
+                        return false;
 
-                    break;
+                    return true;
                 case ChessPiece.King: // 1 position in each dirrection
                     break;
                 case ChessPiece.Pawn: // 1 postion on column, 2 is possible if at start
