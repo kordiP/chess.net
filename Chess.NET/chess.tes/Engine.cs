@@ -7,18 +7,18 @@ namespace chess.tes
         public static void Run() // type END for halt
         {
             const string endCom = "END";
-            ChessPieces chess = new ChessPieces();
+            ChessLogic chess = new ChessLogic();
             chess.GenerateChessBoard();
             Console.WriteLine("Press enter to begin the game.");
             string input = Console.ReadLine();
             while (input != endCom)
             {
                 Console.WriteLine(chess.PrintChessBoard());
-                Console.WriteLine("Move piece at pos: ");
+                Console.WriteLine("Move pieces at pos: ");
                 input = Console.ReadLine();
                 int currX = char.Parse(input.Substring(0, 1)) - 97;
                 int currY = int.Parse(input.Substring(1, 1)) - 1;
-                Console.WriteLine("Move piece to pos: ");
+                Console.WriteLine("Move pieces to pos: ");
                 input = Console.ReadLine();
                 int nextX = char.Parse(input.Substring(0, 1)) - 97;
                 int nextY = int.Parse(input.Substring(1, 1)) - 1;
