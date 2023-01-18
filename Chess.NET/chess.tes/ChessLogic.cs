@@ -236,21 +236,23 @@ namespace chess.tes
                     else if (Math.Abs(nextX - currX) > 1 || Math.Abs(nextY - currY) > 1)
                         return false;
                     break;
-                case " Pawn ": // + en-passant
+                case " Pawn ": // + en-passant?
                     if (currPiece.Color == "White") // White case
                     {
                         if (nextX == currX) // check for forward movement (1 space), (2 spaces)
                         {
                             if (nextY - currY > 2 || nextY - currY < 0) // (1 space)
                                 return false;
-                            else if (nextY - currY == 2 && currY != 1 && !board[nextX, currY + 1].Equals(none)) // (2 spaces)
+                            else if (nextY - currY == 2 && currY != 1 || nextY - currY == 2 && !board[nextX, currY+1].Equals(none)) // (2 spaces) //
                                 return false;
                             else if (!board[nextX, nextY].Equals(none)) // check if next space is free, because capturing is possible only in diagonals
                                 return false;
                         }
-                        else if (nextX != currX) // check for capture
+                        else if (nextX != currX && Math.Abs(nextX - currX) == nextY - currY) // check for capture
                         {
-                            if (!board[nextX, nextY].Equals(none) && board[nextX, nextY].Color == currPiece.Color)
+                            if (!board[nextX, nextY].Equals(none) && board[nextX, nextY].Color == currPiece.Color || board[nextX, nextY].Equals(none))
+                                return false;
+                            else if (nextY - currY > 1)
                                 return false;
                         }
                     }
