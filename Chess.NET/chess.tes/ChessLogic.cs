@@ -248,11 +248,11 @@ namespace chess.tes
                             else if (!board[nextX, nextY].Equals(none)) // check if next space is free, because capturing is possible only in diagonals
                                 return false;
                         }
-                        else if (nextX != currX && Math.Abs(nextX - currX) == nextY - currY) // check for capture
+                        else if (nextX != currX && Math.Abs(nextX - currX) == Math.Abs(nextY - currY)) // check for capture
                         {
                             if (!board[nextX, nextY].Equals(none) && board[nextX, nextY].Color == currPiece.Color || board[nextX, nextY].Equals(none))
                                 return false;
-                            else if (nextY - currY > 1)
+                            else if (nextY - currY > 1 || nextY - currY < 0)
                                 return false;
                         }
                     }
@@ -267,14 +267,13 @@ namespace chess.tes
                             else if (!board[nextX, nextY].Equals(none)) // check if next space is free, because capturing is possible only in diagonals
                                 return false;
                         }
-                        else if (nextX != currX && Math.Abs(nextX - currX) == currY - nextY) // check for capture
+                        else if (nextX != currX && Math.Abs(nextX - currX) == Math.Abs(currY - nextY)) // check for capture
                         {
                             if (!board[nextX, nextY].Equals(none) && board[nextX, nextY].Color == currPiece.Color || board[nextX, nextY].Equals(none))
                                 return false;
-                            else if (currY - nextY > 1)
+                            else if (currY - nextY > 1 || currY - nextY < 0)
                                 return false;
                         }
-
                     }
                     return true;
                 default:
