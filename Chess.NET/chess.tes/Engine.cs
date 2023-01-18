@@ -26,6 +26,7 @@ namespace chess.tes
                 //Console.Clear();
                 Console.WriteLine(chess.PrintChessBoard());
                 Console.WriteLine("Press enter for next move or type /END/ to close.");
+                Console.Clear();
                 input = Console.ReadLine();
             }
             Console.Clear();
