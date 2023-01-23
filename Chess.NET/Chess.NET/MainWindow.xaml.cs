@@ -21,14 +21,23 @@ namespace Chess.NET
     /// </summary>
     public partial class MainWindow : Window
     {
+        ChessLogic board = new ChessLogic();
+        Dictionary<ChessPiece, Path> grid = new Dictionary<ChessPiece, Path>();
         public MainWindow()
         {
             InitializeComponent();
+            board.GenerateChessBoard();
+            //for (int i = 'a'; i < 'i'; i++) 
+            //{
+            //    for (int j = 0; j < 8; j++)
+            //    {
+            //        grid.Add(board.chessBoard[i - 97, j], a1_Path); //replace "a1_Path" with the code for fields in solitaire game from school
+            //    }
+            //}
         }
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Point currentPosition = new Point();
-            currentPosition = Mouse.GetPosition(this);
+            Point currentPosition = Mouse.GetPosition(this);
             if (e.LeftButton == MouseButtonState.Pressed && IsOutside(currentPosition))
             {
                 DragMove();
@@ -43,7 +52,6 @@ namespace Chess.NET
             return false;
         }
 
-
         private void white_Knight1_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -51,13 +59,5 @@ namespace Chess.NET
 
             }
         }
-        private void white_pawn2_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-
-            }
-        }
-
     }
 }
