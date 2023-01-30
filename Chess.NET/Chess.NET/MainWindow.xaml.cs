@@ -37,11 +37,11 @@ namespace Chess.NET
         }
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Point currentPosition = Mouse.GetPosition(this);
-            if (e.LeftButton == MouseButtonState.Pressed && IsOutside(currentPosition))
-            {
-                DragMove();
-            }
+            //Point currentPosition = Mouse.GetPosition(this);
+            //if (e.LeftButton == MouseButtonState.Pressed && IsOutside(currentPosition))
+            //{
+            //    DragMove();
+            //}
         }
         private bool IsOutside(Point currPos)
         {
@@ -52,12 +52,24 @@ namespace Chess.NET
             return false;
         }
 
-        private void white_Knight1_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
 
-            }
+        private void SwapPieces(Path piece1, Path piece2) // SwapPieces(Piece1, Piece2); *mouseLeftDown*
+        {
+            (piece1.Data, piece2.Data) = (piece2.Data, piece1.Data);
+            (piece1.RenderTransform, piece2.RenderTransform) = (piece2.RenderTransform, piece1.RenderTransform);
+            (piece1.Width, piece2.Width) = (piece2.Width, piece1.Width);
+            (piece1.Height, piece2.Height) = (piece2.Height, piece1.Height);
+            (piece1.Style, piece2.Style) = (piece2.Style, piece1.Style);
+        }
+
+        private void b8_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            SwapPieces(b8,a8);
+        }
+
+        private void a8_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            SwapPieces(b8, a8);
         }
     }
 }
