@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chess.NET"
         mc:Ignorable="d"
-        Title="Chess.NET" Height="800" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid MouseDown="Grid_MouseDown">
+        Title="Chess.NET" Height="755.960" Width="940" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid MouseDown="Grid_MouseDown" Background="{DynamicResource MoveMenu}">
         <Border BorderThickness="50" BorderBrush="{StaticResource BoardOutline}">
             <Grid>
                 <Grid.RowDefinitions>
@@ -28,51 +28,107 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                     <ColumnDefinition />
+                    <ColumnDefinition Width="200"/>
+
                 </Grid.ColumnDefinitions>
-                
+
                 <Grid Grid.Row="0" Grid.Column="0" Background="{DynamicResource OddTile}" >
-                <Canvas>
-                    <Path x:Name="a8" Style="{DynamicResource None}" MouseLeftButtonDown="a8_MouseLeftButtonDown"/>
-                </Canvas>
-                </Grid>
-                    <Grid Grid.Row="0" Grid.Column="1" Background="{DynamicResource EvenTile}" >
                     <Canvas>
-                        <Path x:Name="b8" Style="{DynamicResource Knight_B}" MouseLeftButtonDown="b8_MouseLeftButtonDown"/>
+                        <Path x:Name="a8" Style="{DynamicResource Rook_B}"/>
+                    </Canvas>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="1" Background="{DynamicResource EvenTile}" >
+                    <Canvas>
+                        <Path x:Name="b8" Style="{DynamicResource Knight_B}"/>
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="2" Background="{DynamicResource OddTile}" >
+                    <Canvas>
+                        <Path x:Name="c8" Style="{DynamicResource Bishop_B}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="3" Background="{DynamicResource EvenTile}" >
+                    <Canvas>
+                        <Path x:Name="d8" Style="{DynamicResource Queen_B}"/>
+                    </Canvas>
+
                 </Grid>
-                <Grid Grid.Row="0" Grid.Column="4" Background="{DynamicResource OddTile}" >
+                <Grid Grid.Row="0" Grid.Column="4" Background="{DynamicResource OddTile}">
+                    <Canvas>
+                        <Path x:Name="e8" Style="{DynamicResource King_B}"/>
+                    </Canvas>
+
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="5" Background="{DynamicResource EvenTile}" >
+                    <Canvas>
+                        <Path x:Name="f8" Style="{DynamicResource Bishop_B}"/>
+                    </Canvas>
+
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="6" Background="{DynamicResource OddTile}" >
+                    <Canvas>
+                        <Path x:Name="g8" Style="{DynamicResource Knight_B}"/>
+                    </Canvas>
+
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="7" Background="{DynamicResource EvenTile}" >
+                    <Canvas>
+                        <Path x:Name="h8" Style="{DynamicResource Rook_B}"/>
+                    </Canvas>
+
                 </Grid>
 
+
                 <Grid Grid.Row="1" Grid.Column="0" Background="{DynamicResource EvenTile}" >
+                    <Canvas>
+                        <Path x:Name="a7" Style="{DynamicResource Pawn_B}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="1" Background="{DynamicResource OddTile}" >
+                    <Canvas>
+                        <Path x:Name="b7" Style="{DynamicResource Pawn_B}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="2" Background="{DynamicResource EvenTile}" >
+                    <Canvas>
+                        <Path x:Name="c7" Style="{DynamicResource Pawn_B}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="3" Background="{DynamicResource OddTile}" >
+                    <Canvas>
+                        <Path x:Name="d7" Style="{DynamicResource Pawn_B}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="4" Background="{DynamicResource EvenTile}" >
+                    <Canvas>
+                        <Path x:Name="e7" Style="{DynamicResource Pawn_B}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="5" Background="{DynamicResource OddTile}" >
+                    <Canvas>
+                        <Path x:Name="f7" Style="{DynamicResource Pawn_B}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="6" Background="{DynamicResource EvenTile}" >
+                    <Canvas>
+                        <Path x:Name="g7" Style="{DynamicResource Pawn_B}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="7" Background="{DynamicResource OddTile}" >
+                    <Canvas>
+                        <Path x:Name="h7" Style="{DynamicResource Pawn_B}"/>
+                    </Canvas>
                 </Grid>
 
                 <Grid Grid.Row="2" Grid.Column="0" Background="{DynamicResource OddTile}" >
+                    <Canvas>
+                        <Path x:Name="a6" Style="{DynamicResource None}"/>
+                    </Canvas>
                 </Grid>
-                <Grid Grid.Row="2" Grid.Column="1" Background="{DynamicResource EvenTile}" >
+                <Grid Grid.Row="2" Grid.Column="1" Background="{DynamicResource EvenTile}"  >
+                    <Canvas>
+                        <Path x:Name="b6" Style="{DynamicResource None}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="2" Grid.Column="2" Background="{DynamicResource OddTile}" >
                 </Grid>
@@ -86,6 +142,7 @@
                 </Grid>
                 <Grid Grid.Row="2" Grid.Column="7" Background="{DynamicResource EvenTile}" >
                 </Grid>
+
 
                 <Grid Grid.Row="3" Grid.Column="0" Background="{DynamicResource EvenTile}" >
                 </Grid>
@@ -107,7 +164,7 @@
 
                 <Grid Grid.Row="4" Grid.Column="0" Background="{DynamicResource OddTile}" >
                 </Grid>
-                <Grid Grid.Row="4" Grid.Column="1" Background="{DynamicResource EvenTile}" >
+                <Grid Grid.Row="4" Grid.Column="1" Background="{DynamicResource EvenTile}"  >
                 </Grid>
                 <Grid Grid.Row="4" Grid.Column="2" Background="{DynamicResource OddTile}" >
                 </Grid>
@@ -140,38 +197,99 @@
                 </Grid>
 
                 <Grid Grid.Row="6" Grid.Column="0" Background="{DynamicResource OddTile}" >
+                    <Canvas>
+                        <Path x:Name="a2" Style="{DynamicResource Pawn_W}"/>
+                    </Canvas>
                 </Grid>
-                <Grid Grid.Row="6" Grid.Column="1" Background="{DynamicResource EvenTile}" >
+                <Grid Grid.Row="6" Grid.Column="1" Background="{DynamicResource EvenTile}"  >
+                    <Canvas>
+                        <Path x:Name="b2" Style="{DynamicResource Pawn_W}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="6" Grid.Column="2" Background="{DynamicResource OddTile}" >
+                    <Canvas>
+                        <Path x:Name="c2" Style="{DynamicResource Pawn_W}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="6" Grid.Column="3" Background="{DynamicResource EvenTile}" >
+                    <Canvas>
+                        <Path x:Name="d2" Style="{DynamicResource Pawn_W}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="6" Grid.Column="4" Background="{DynamicResource OddTile}" >
+                    <Canvas>
+                        <Path x:Name="e2" Style="{DynamicResource Pawn_W}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="6" Grid.Column="5" Background="{DynamicResource EvenTile}" >
+                    <Canvas>
+                        <Path x:Name="f2" Style="{DynamicResource Pawn_W}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="6" Grid.Column="6" Background="{DynamicResource OddTile}" >
+                    <Canvas>
+                        <Path x:Name="g2" Style="{DynamicResource Pawn_W}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="6" Grid.Column="7" Background="{DynamicResource EvenTile}" >
+                    <Canvas>
+                        <Path x:Name="h2" Style="{DynamicResource Pawn_W}"/>
+                    </Canvas>
                 </Grid>
 
+
                 <Grid Grid.Row="7" Grid.Column="0" Background="{DynamicResource EvenTile}" >
+                    <Canvas>
+                        <Path x:Name="a1" Style="{DynamicResource Rook_W}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="7" Grid.Column="1" Background="{DynamicResource OddTile}" >
+                    <Canvas>
+                        <Path x:Name="b1" Style="{DynamicResource Knight_W}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="7" Grid.Column="2" Background="{DynamicResource EvenTile}" >
+                    <Canvas>
+                        <Path x:Name="c1" Style="{DynamicResource Bishop_W}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="7" Grid.Column="3" Background="{DynamicResource OddTile}" >
+                    <Canvas>
+                        <Path x:Name="d1" Style="{DynamicResource Queen_W}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="7" Grid.Column="4" Background="{DynamicResource EvenTile}" >
+                    <Canvas>
+                        <Path x:Name="e1" Style="{DynamicResource King_W}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="7" Grid.Column="5" Background="{DynamicResource OddTile}" >
+                    <Canvas>
+                        <Path x:Name="f1" Style="{DynamicResource Bishop_W}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="7" Grid.Column="6" Background="{DynamicResource EvenTile}" >
+                    <Canvas>
+                        <Path x:Name="g1" Style="{DynamicResource Knight_W}"/>
+                    </Canvas>
                 </Grid>
                 <Grid Grid.Row="7" Grid.Column="7" Background="{DynamicResource OddTile}" >
+                    <Canvas>
+                        <Path x:Name="h1" Style="{DynamicResource Rook_W}"/>
+                    </Canvas>
+
                 </Grid>
+                
+                <Grid Grid.Row="0" Grid.Column="8" Background="{DynamicResource MoveMenu}" >
+                    <Label Content="Moves" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Papyrus" FontSize="50" FontWeight="Bold"/>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="8" Background="{DynamicResource MoveMenu}" />
+                <Grid Grid.Row="2" Grid.Column="8" Background="{DynamicResource MoveMenu}" />
+                <Grid Grid.Row="3" Grid.Column="8" Background="{DynamicResource MoveMenu}" />
+                <Grid Grid.Row="4" Grid.Column="8" Background="{DynamicResource MoveMenu}" />
+                <Grid Grid.Row="5" Grid.Column="8" Background="{DynamicResource MoveMenu}" />
+                <Grid Grid.Row="6" Grid.Column="8" Background="{DynamicResource MoveMenu}" />
+                <Grid Grid.Row="7" Grid.Column="8" Background="{DynamicResource MoveMenu}" />
 
             </Grid>
         </Border>

@@ -67,7 +67,7 @@ namespace Chess.NET
                 chessBoard[j, 6] = pawn_b;
             }
         }
-        public bool IsLegalMove(int currX, int currY, int nextX, int nextY) // add color check to all checks for <if (none)...>
+        private bool IsLegalMove(int currX, int currY, int nextX, int nextY) 
         {
             ChessPiece currPiece = chessBoard[currX, currY];
             switch (currPiece.Name)
@@ -223,7 +223,7 @@ namespace Chess.NET
                     else if (Math.Abs(nextX - currX) > 1 || Math.Abs(nextY - currY) > 1)
                         return false;
                     break;
-                case " Pawn ": // + en-passant?
+                case " Pawn ": // 
                     if (currPiece.Color == "White") // White case
                     {
                         if (nextX == currX) // check for forward movement (1 space), (2 spaces)
@@ -278,6 +278,5 @@ namespace Chess.NET
                 moves.Add($"{moves.Count + 1}.{(char)(currX + 97)}{currY + 1} -> {(char)(nextX + 97)}{nextY + 1}\t*{currPiece.Color}*", currPiece);
             }
         }
-
     }
 }
